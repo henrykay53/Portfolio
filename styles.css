@@ -1,0 +1,218 @@
+:root {
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 2000;
+
+    --clr-light: gold;
+    --clr-dark: #303030;
+    --clr-accent: #125fd3;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.3rem;
+    --fs-body: 1.1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+          0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+
+}
+
+header, nav, footer, div, section {
+    display: block;
+}
+
+/* Custom settings */
+
+body { 
+    margin: 0 auto; /*Recall that when !margin: 0 auto, there are spaces by both sides I do not understand(ASK FOR HELP!!!)*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* header */
+.nav--bar {
+    position: fixed;
+    background-color: gold;
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+}
+
+.header--list {
+    font-size: var(--fs-body);
+}
+
+.nick--name {
+    position: relative;
+    left: 60px;
+    bottom: 20px;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-dark);
+}
+
+ul.list{
+    position: relative;
+    bottom: 90px;
+    text-align: right;
+    padding-right: 8em;
+}
+
+li.header--list{
+    display: inline-block;
+    letter-spacing: 0.2em;
+    padding-left: 20px;
+}
+
+/* introduction */
+.first--section{
+    margin-bottom: 32em;
+    /* overflow: hidden; */
+    /* display: flex; */
+}
+
+.para--one {
+    position: absolute;
+    top: 150px;
+    right: 600px;
+}
+    
+.image--one {
+    position: relative;
+    top: 150px;
+    left: 500px;
+}
+
+.para--two {
+    position: relative;
+    left: 500px;
+    top: 200px;
+    z-index: 8;
+}
+
+.img--two--para--two {
+    overflow: hidden;
+}
+      
+.image--two {
+    position: absolute;
+    right: 550px;
+    top: 710px;
+}
+
+/* what--i--do */
+@media(min-width: 400px) {
+    .what--i--do {
+        background: url("../images/laptop.jpg");
+        background-size: cover;
+        text-align: center;
+        color: white;
+        padding-top: 4em;
+    }
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 2px;
+    padding: .5em 3.5em;
+    color: black;
+    background-color: var(--clr-light);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* intrest */
+
+@media(min-width: 400px) {
+    .intrests{
+        margin-top: 1em;
+        height: 18em;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+    
+    .header--text{
+        text-align: center;
+        color: gold;
+    }
+
+    .first--header {
+        padding-right: 1.5em;
+        
+    }
+    
+    .middle--header {
+        padding-right: 1em;
+    }
+
+    .last--header {
+        padding-right: 1em;
+    }
+      
+    h2#intrest {
+        text-align: center;
+        margin-top: 4em;
+    }
+}
+
+/* footer */
+footer {
+    text-align: center;
+    background-color: var(--clr-dark);
+}
+
+.contact--me {
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+.contact--header {
+    padding-top: 3em;
+}
+
+.twitter {
+    margin-bottom: 2em;
+}
+
+footer a {
+    color: var(--clr-light);
+}
+
+@media(min-width: 500px) {
+    .top--button {
+        position: relative;
+        left: 10em;
+        background: var(--clr-light);
+        color: black;
+        border-radius: 50%;
+        padding: 1em 1em;
+        margin-bottom: 3em;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+}
+
+footer li {
+    display: block;
+    padding-right: 2.5em;
+    padding-top: 1em;
+}
