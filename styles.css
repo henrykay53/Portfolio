@@ -1,121 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
-    --ff-primary: 'Roboto', sans-serif;
-    --ff-secondary: 'Source Code Pro', monospace;
+    --clr-light: white;
+    --clr-dark: black;
+    --clr-accent: yellow;
 
-    --fw-reg: 300;
-    --fw-bold: 2000;
+    --fs-small: 2em;
+    --fs-medium: 1.8em;
+    --fs-large: 4.5em;
 
-    --clr-light: gold;
-    --clr-dark: #303030;
-    --clr-accent: #125fd3;
+    --fw-small: 300;
+    --fw-large: 800;
 
-    --fs-h1: 3rem;
-    --fs-h2: 2.25rem;
-    --fs-h3: 1.3rem;
-    --fs-body: 1.1rem;
-
-    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
-          0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
-
+    --bs: 2em 2em 2em rgba(0, 0, 0, 0.5),
+    4em 4em 2em rgba(0, 0, o, 0, 0.5);
 }
 
-header, nav, footer, div, section {
-    display: block;
+@media(max-width:800px) {
+    :root {
+        --fs-small: 1em;
+        --fs-medium: 2em;
+        --fs-large: 3.5em;
+    }
 }
 
-/* Custom settings */
-
-body { 
-    margin: 0 auto; /*Recall that when !margin: 0 auto, there are spaces by both sides I do not understand(ASK FOR HELP!!!)*/
+body {
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    margin: 0;
 }
 
-html {
-    scroll-behavior: smooth;
+@media(max-width: 500px) {
+    body {
+        background: var(--clr-light);
+        color: var(--clr-dark)
+    }
 }
 
-/* header */
-.nav--bar {
-    position: fixed;
-    background-color: gold;
-    width: 100%;
-    height: 70px;
-    z-index: 2;
+/* Headear */
+nav {
+    background-color: var(--clr-accent);
 }
-
-.header--list {
-    font-size: var(--fs-body);
-}
-
 .nick--name {
+    margin-left: 1em;
+    padding-top: 0.3em;
+    font-size: var(--fs-medium);
+}
+ul {
+    text-align: center;
     position: relative;
-    left: 60px;
-    bottom: 20px;
-    font-size: var(--fs-h2);
-    font-weight: var(--fw-bold);
+    bottom: 1.8em;
+}
+
+li {
+    display: inline;
+    padding: 2em;
+}
+
+@media(max-width: 900px) {
+    li {
+        display: block;
+    }
 }
 
 a {
     text-decoration: none;
-    color: var(--clr-dark);
 }
 
-ul.list{
-    position: relative;
-    bottom: 90px;
-    text-align: right;
-    padding-right: 8em;
+.img--one--para--one {
+    display: flex;
+    flex-wrap: wrap;
 }
+.img--left--flex {
+    flex: 30%;
 
-li.header--list{
-    display: inline-block;
-    letter-spacing: 0.2em;
-    padding-left: 20px;
 }
+.para--right--flex {
+    flex: 70%;
 
-/* introduction */
-.first--section{
-    margin-bottom: 32em;
-    /* overflow: hidden; */
-    /* display: flex; */
 }
-
-.para--one {
-    position: absolute;
-    top: 150px;
-    right: 600px;
-}
-    
-.image--one {
-    position: relative;
-    top: 150px;
-    left: 500px;
-}
-
-.para--two {
-    position: relative;
-    left: 500px;
-    top: 200px;
-    z-index: 8;
-}
-
 .img--two--para--two {
-    overflow: hidden;
-}
-      
-.image--two {
-    position: absolute;
-    right: 550px;
-    top: 710px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
-/* what--i--do */
-@media(min-width: 400px) {
+.para--left--flex {
+    flex: 70%;
+}
+
+.img--right--flex {
+    flex: 30%;
+    /* align-content: space-between; */
+}
+
+@media(min-width: 500px) {
     .what--i--do {
-        background: url("images/laptop.jpg");
+        background-image: url("images/laptop.jpg");
         background-size: cover;
-        text-align: center;
         color: white;
-        padding-top: 4em;
+        text-align: center;
+        padding: 4em;
+        margin-top: 2em;
     }
 }
 
@@ -123,58 +111,40 @@ li.header--list{
     display: inline-block;
     border-radius: 2px;
     padding: .5em 3.5em;
-    color: black;
-    background-color: var(--clr-light);
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
     text-decoration: none;
     cursor: pointer;
     font-size: .8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: var(--fw-bold);
     margin-top: 2em;
-    margin-bottom: 3em;
 }
 
 .btn:hover {
     transform: scale(1.1);
 }
 
-/* intrest */
-
-@media(min-width: 400px) {
-    .intrests{
-        margin-top: 1em;
-        height: 18em;
-        display: flex;
-        justify-content: space-between;
-        padding-left: 1.5em;
-        padding-right: 1.5em;
-    }
-    
-    .header--text{
-        text-align: center;
-        color: gold;
-    }
-
-    .first--header {
-        padding-right: 1.5em;
-        
-    }
-    
-    .middle--header {
-        padding-right: 1em;
-    }
-
-    .last--header {
-        padding-right: 1em;
-    }
-      
-    h2#intrest {
-        text-align: center;
-        margin-top: 4em;
-    }
+.intrest--header {
+    text-align:center;
+}
+.intrest {
+    display: flex;
 }
 
-/* footer */
+.read {
+    flex: 33.3%;
+}
+
+.code {
+    flex: 33.3%;
+}
+
+.music {
+    flex: 33.3%;
+}
+
 footer {
     text-align: center;
     background-color: var(--clr-dark);
@@ -216,3 +186,4 @@ footer li {
     padding-right: 2.5em;
     padding-top: 1em;
 }
+© 2021 GitHub, Inc.
