@@ -14,8 +14,7 @@
     --fw-small: 300;
     --fw-large: 800;
 
-    --bs: 2em 2em 2em rgba(0, 0, 0, 0.5),
-    4em 4em 2em rgba(0, 0, o, 0, 0.5);
+    --bs: 1em 1em 1em rgba(224, 236, 238, 0.1);
 }
 
 @media(max-width:800px) {
@@ -68,13 +67,27 @@ li {
 a {
     text-decoration: none;
 }
+/* INTRODUCTION */
 
+img {
+    box-shadow: var(--bs);
+}
+@media(min-width: 900px) {
+    .img--one--para--one {
+        width: 80%;
+    }
+
+    .img--two--para--two {
+        width: 80%;
+    }
+}
 .img--one--para--one {
     display: flex;
     flex-wrap: wrap;
 }
 .img--left--flex {
     flex: 30%;
+    /* margin-left: 2em; */
 
 }
 .para--right--flex {
@@ -84,7 +97,6 @@ a {
 .img--two--para--two {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row-reverse;
 }
 
 .para--left--flex {
@@ -96,6 +108,7 @@ a {
     /* align-content: space-between; */
 }
 
+/* WHAT--I--DO */
 @media(min-width: 500px) {
     .what--i--do {
         background-image: url("images/laptop.jpg");
@@ -145,45 +158,13 @@ a {
     flex: 33.3%;
 }
 
+/* FOOTER */
 footer {
-    text-align: center;
-    background-color: var(--clr-dark);
+    background-color: var(--clr-accent);
+    height: 12em;
+
 }
 
-.contact--me {
-    margin-top: 4em;
-    margin-bottom: 2em;
-}
-
-.contact--header {
-    padding-top: 3em;
-}
-
-.twitter {
-    margin-bottom: 2em;
-}
-
-footer a {
-    color: var(--clr-light);
-}
-
-@media(min-width: 500px) {
-    .top--button {
-        position: relative;
-        left: 10em;
-        background: var(--clr-light);
-        color: black;
-        border-radius: 50%;
-        padding: 1em 1em;
-        margin-bottom: 3em;
-        text-transform: uppercase;
-        display: inline-block;
-    }
-}
-
-footer li {
+.footer--list {
     display: block;
-    padding-right: 2.5em;
-    padding-top: 1em;
 }
-© 2021 GitHub, Inc.
