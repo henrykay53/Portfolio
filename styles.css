@@ -7,6 +7,8 @@
     --clr-dark: black;
     --clr-accent: yellow;
 
+    --ff-funny: 'Hanalei', cursive;
+
     --fs-small: 1.2em;
     --fs-medium: 1.8em;
     --fs-large: 4.5em;
@@ -14,7 +16,11 @@
     --fw-small: 300;
     --fw-large: 800;
 
-    --bs: 1em 1em 1em rgba(224, 236, 238, 0.1);
+    --bs: 1em 1em 1.5em rgba(161, 179, 180, 1);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 @media(max-width:800px) {
@@ -26,17 +32,9 @@
 }
 
 body {
-    background: var(--clr-dark);
-    color: var(--clr-light);
     margin: 0;
 }
 
-@media(max-width: 500px) {
-    body {
-        background: var(--clr-light);
-        color: var(--clr-dark)
-    }
-}
 
 /* Headear */
 nav {
@@ -67,13 +65,18 @@ a {
 }
 
 /* these are demo colors to ensure code works as intended */
-a:hover {
-    color: gold;
+a:link{
+    color:orange;
 }
 
 a:visited {
     color: green;
 }
+
+a:hover {
+    color: gold;
+}
+
 a:active {
     color: black;
 }
@@ -82,6 +85,7 @@ a:active {
 img {
     box-shadow: var(--bs);
 }
+
 @media(min-width: 900px) {
     .img--one--para--one {
         width: 80%;
@@ -123,15 +127,19 @@ img {
 }
 
 /* WHAT--I--DO */
-@media(min-width: 500px) {
-    .what--i--do {
-        background-image: url("images/laptop.jpg");
-        background-size: cover;
-        color: white;
-        text-align: center;
-        padding: 4em;
-        margin-top: 2em;
-    }
+
+.what--i--do--header {
+    font-family: var(--ff-funny);
+    font-size: 2em;
+}
+
+.what--i--do {
+    background-image: url("images/laptop.jpg");
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 4em;
+    margin-top: 2em;
 }
 
 .btn {
@@ -155,27 +163,41 @@ img {
 
 .intrest--header {
     text-align:center;
+    margin-top: 2em;
 }
 .intrest {
     display: flex;
+    margin-bottom: 5em;
 }
 
 .read {
     flex: 33.3%;
+    text-align: center;
 }
 
 .code {
     flex: 33.3%;
+    text-align: center;
 }
 
 .music {
     flex: 33.3%;
+    text-align: center;
 }
+
+@media(max-width:900px) {
+    .intrest {
+        display:block;
+    }
+}
+
 
 /* FOOTER */
 footer {
+    text-align: center;
     background-color: var(--clr-accent);
-    height: 12em;
+    height: 18em;
+    padding: 4em;
 
 }
 
