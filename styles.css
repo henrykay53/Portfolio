@@ -66,7 +66,7 @@ a {
 
 /* these are demo colors to ensure code works as intended */
 a:link{
-    color:orange;
+    /* color:orange; */
 }
 
 a:visited {
@@ -87,7 +87,7 @@ a:active {
 /* Introduction view layout on desktop */
 .img--one--para--one {
     display: flex;
-    /* margin-left: 20em; */
+    margin-top: 2em;
     /* flex-wrap: wrap; */
     /* padding-left: 3em; */
 }
@@ -100,6 +100,7 @@ a:active {
 .para--right--flex {
     flex: 50%;
     margin-left: 2em;
+    text-align: center;
 
 }
 .img--two--para--two {
@@ -113,6 +114,7 @@ a:active {
 .para--left--flex {
     margin-left: 2em;
     flex: 50%;
+    text-align: center;
 }
 
 .img--right--flex {
