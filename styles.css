@@ -17,7 +17,8 @@
     --fw-small: 300;
     --fw-large: 800;
 
-    --bs: -1em 1em 1.5em rgba(161, 179, 180, 1);
+    --bs-img--one: 1em 1em 1.5em rgba(161, 179, 180, 1);
+    --bs-img--two: -1em 1em 1.5em rgba(161, 179, 180, 1);
 }
 
 @media(max-width:800px) {
@@ -48,12 +49,48 @@ p {
 }
 
 /* Headear */
+.navigation--bar {
+    display: flex;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    justify-content: center;
+}
+.flex-ai-c {
+    align-items: center;
+}
+
+.flex-jc-sb {
+    /* justify-content: space-between; */
+}
+.mobile--view >span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #2d314d;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    -webkit-transform-origin: 3px 1px;
+            transform-origin: 3px 1px;
+  }
+  
+  .mobile--view > span:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .mobile--view {
+      padding-top: 20px;
+      padding-left: 30px;
+  }
+
+  
+
 nav {
     background-color: var(--clr-accent);
 }
 
+
+
 ul {
-    text-align: center;
     text-transform: uppercase;
     padding: 0.8em;
     font-size: var(--fs-small);
@@ -64,12 +101,28 @@ li {
     padding: 1.2em;
 }
 
-@media(max-width: 600px) {
-    li {
-        display: block;
-        height: 0.01em;
+
+/* switch to mobile view at this width */
+@media (max-width: 63.937em) { 
+    .desktop--view {
+      display: none;
     }
-}
+
+    nav {
+        background-color: white;
+    }
+
+    .flex-jc-sb {
+        justify-content: space-between;
+    }
+  }
+  
+  /* awitch to desktop view at this width */
+  @media (min-width: 64em) {
+    .mobile--view {
+      display: none;
+    }
+  }
 
 a {
     text-decoration: none;
@@ -104,11 +157,14 @@ a:active {
 .img--left--flex {
     flex: 35%;
     margin-left: 1.5em;
-    box-shadow: var(--bs);
+    box-shadow: var(--bs-img--one);
     /* margin-left: 2em; */
 }
 
+
+
 .para--right--flex {
+    display: block;
     flex: 65%;
     margin-left: 2em;
     text-align: center;
@@ -131,7 +187,7 @@ a:active {
 .img--right--flex {
     flex: 35%;
     margin-right: 2em;
-    box-shadow: var(--bs);
+    box-shadow: var(--bs-img--two);
     /* align-content: space-between; */
 }
 
