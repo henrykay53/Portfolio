@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Custom variables */
 :root {
     --clr-light: white;
     --clr-dark: black;
@@ -21,6 +22,7 @@
     --bs-img--two: -1em 1em 1.5em rgba(161, 179, 180, 1);
 }
 
+/* Font sizes for smaller screens */
 @media(max-width:800px) {
     :root {
         --fs-small: 1em;
@@ -30,13 +32,17 @@
 }
 
 html {
-    scroll-behavior:auto;
+    scroll-behavior: auto;
 }
 
 body {
     max-width: 100%;
     margin: 0;
     font-size: 100%;
+}
+
+nav {
+    background-color: var(--clr-accent);
 }
 
 h2 {
@@ -48,45 +54,109 @@ p {
     font-size: 1.1em;
 }
 
-/* Headear */
+/* Positioning navigation menu for header */
 .navigation--bar {
     display: flex;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     justify-content: center;
 }
+
 .flex-ai-c {
     align-items: center;
 }
 
-.flex-jc-sb {
-    /* justify-content: space-between; */
-}
+
+/* Styling hamburger button */
 .mobile--view >span {
     display: block;
     width: 26px;
     height: 2px;
+    z-index: 99999999;
     background-color: #2d314d;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
     -webkit-transform-origin: 3px 1px;
             transform-origin: 3px 1px;
-  }
-  
-  .mobile--view > span:not(:last-child) {
-    margin-bottom: 5px;
-  }
-
-  .mobile--view {
-      padding-top: 20px;
-      padding-left: 30px;
-  }
-
-  
-
-nav {
-    background-color: var(--clr-accent);
 }
+  
+.mobile--view > span:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.mobile--view {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+
+/* Adding animationto hamburger button */
+.mobile--view.open > span:nth-child(2){
+    transform: translateX(-100%);
+    opacity: 0;
+}  
+ 
+.mobile--view.open > span:nth-child(1){
+    transform: rotateZ(45deg);
+}
+ 
+.mobile--view.open > span:nth-child(3){
+    transform: rotateZ(-45deg);
+}
+
+/* Resolution for mobile view */
+@media (max-width: 63.937em) { 
+    .desktop--view {
+      display: none;
+    }
+
+    nav {
+        background-color: white;
+    }
+
+    .flex-jc-sb {
+        justify-content: space-between;
+    }
+}
+
+/* Resolution for destop view */
+@media (min-width: 64em) {
+    .mobile--view {
+      display: none;
+    }
+}
+
+
+
+/* Positioning slider when hamburger button is clicked */
+.slider {
+    /* position: fixed; */
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* top: 0; */
+    /* left: 100%; */
+    background: #ffe8ec;
+    transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+}
+ 
+.header .slider > ul{
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+}
+ 
+.header .slider > ul > li {
+    padding: 10px 0;
+}
+ 
+.header .slider > ul > li > a{
+    text-decoration: none;
+    font-size: 1.4em;
+    color: #292627;
+}
+
+
 
 
 
@@ -101,28 +171,6 @@ li {
     padding: 1.2em;
 }
 
-
-/* switch to mobile view at this width */
-@media (max-width: 63.937em) { 
-    .desktop--view {
-      display: none;
-    }
-
-    nav {
-        background-color: white;
-    }
-
-    .flex-jc-sb {
-        justify-content: space-between;
-    }
-  }
-  
-  /* awitch to desktop view at this width */
-  @media (min-width: 64em) {
-    .mobile--view {
-      display: none;
-    }
-  }
 
 a {
     text-decoration: none;
@@ -160,7 +208,6 @@ a:active {
     box-shadow: var(--bs-img--one);
     /* margin-left: 2em; */
 }
-
 
 
 .para--right--flex {
