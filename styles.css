@@ -6,7 +6,7 @@
 :root {
     --clr-light: white;
     --clr-dark: black;
-    --clr-accent: yellow;
+    --clr-accent: rgba(225, 225, 20, 0.871);
 
     --ff-headers:
     --ff-paragraphs:
@@ -18,8 +18,8 @@
     --fw-small: 300;
     --fw-large: 800;
 
-    --bs-img--one: 1em 1em 1.5em rgba(161, 179, 180, 1);
-    --bs-img--two: -1em 1em 1.5em rgba(161, 179, 180, 1);
+    --bs-img--one: 0.6em 0.6em 1.5em rgba(161, 179, 180, 1);
+    --bs-img--two: -0.6em 0.6em 1.5em rgba(161, 179, 180, 1);
 }
 
 /* Font sizes for smaller screens */
@@ -32,17 +32,13 @@
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
 }
 
 body {
-    max-width: 100%;
-    margin: 0;
+    /* max-width: 100%; */
+    margin: 0 auto;
     font-size: 100%;
-}
-
-nav {
-    background-color: var(--clr-accent);
 }
 
 h2 {
@@ -52,6 +48,25 @@ h2 {
 p {
     line-height: 2em;
     font-size: 1.1em;
+}
+
+nav {
+    background-color: var(--clr-accent);
+}
+
+ul {
+    text-transform: uppercase;
+    padding: 0.8em;
+    font-size: var(--fs-small);
+}
+
+li {
+    display: inline;
+    padding: 1.2em;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Positioning navigation menu for header */
@@ -104,7 +119,11 @@ p {
     transform: rotateZ(-45deg);
 }
 
-/* Resolution for mobile view */
+.mobile--view.close > .slider {
+    display: none;
+}
+
+/* Resolution navigation in mobile view */
 @media (max-width: 63.937em) { 
     .desktop--view {
       display: none;
@@ -124,22 +143,26 @@ p {
     .mobile--view {
       display: none;
     }
+
 }
 
 
-
 /* Positioning slider when hamburger button is clicked */
-.slider {
+/* .slider { */
     /* position: fixed; */
     /* width: 100vw; */
     /* height: 100vh; */
     /* top: 0; */
     /* left: 100%; */
-    background: #ffe8ec;
-    transition: all .25s ease-in-out;
-    -webkit-transition: all .25s ease-in-out;
-}
+    /* background: #ffe8ec; */
+    /* transition: all .25s ease-in-out; */
+    /* -webkit-transition: all .25s ease-in-out; */
+/* } */
  
+.slider {
+    display: none;
+}
+
 .header .slider > ul{
     list-style-type: none;
     padding: 10px;
@@ -147,36 +170,19 @@ p {
 }
  
 .header .slider > ul > li {
-    padding: 10px 0;
+    padding: 10px 10px;
 }
  
 .header .slider > ul > li > a{
     text-decoration: none;
     font-size: 1.4em;
-    color: #292627;
+    color: #0a3fa9;
+    display: block;
 }
 
 
 
-
-
-ul {
-    text-transform: uppercase;
-    padding: 0.8em;
-    font-size: var(--fs-small);
-}
-
-li {
-    display: inline;
-    padding: 1.2em;
-}
-
-
-a {
-    text-decoration: none;
-}
-
-/* these are demo colors to ensure code works as intended */
+/* these are demo colors to ensure code works as intended . Colors are very much subject to change*/
 a:link{
     color:orange; 
 }
@@ -254,7 +260,6 @@ a:active {
 
     img {
         width: 90%;
-        margin: 0;
     }
 }
 
@@ -262,29 +267,33 @@ a:active {
 .what--i--do {
     background-image: url("images/laptop.jpg");
     background-size: cover;
+    background-attachment: fixed;
     color: white;
     text-align: center;
-    padding: 2em;
+    padding: 4.5em;
     margin-top: 2em;
+    height: 30em;
 }
 
 .btn {
     display: inline-block;
-    border-radius: 2px;
-    padding: .5em 3.5em;
+    margin-top: 2em;
+    padding: .8em 3em;
+    border-radius: 10px;
+    font-size: .8rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
     background-color: var(--clr-accent);
     color: var(--clr-dark);
-    text-decoration: none;
     cursor: pointer;
-    font-size: .8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: var(--fw-bold);
-    margin-top: 2em;
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.2, 1.2);
+    transition: 600ms ease-in-out;
+    background-color: rgb(0, 145, 255);
 }
 
 .intrest--header {
@@ -330,10 +339,9 @@ a:active {
 footer {
     text-align: center;
     background-color: var(--clr-accent);
-    /* height: 18em; */
-    padding: 2em;
+    padding: 1em;
 }
 
 .footer--list {
-    /* display: block; */
+    display: block;
 }
